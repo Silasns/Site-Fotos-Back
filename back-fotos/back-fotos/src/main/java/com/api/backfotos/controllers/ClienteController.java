@@ -44,7 +44,7 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.OK).body(clienteService.findAll());
     }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public ResponseEntity <Object> getClienteById(@PathVariable(value = "id") UUID id){
         Optional<ClienteModel> clienteModelOptional = clienteService.findById(id);
         if(!clienteModelOptional.isPresent()){
