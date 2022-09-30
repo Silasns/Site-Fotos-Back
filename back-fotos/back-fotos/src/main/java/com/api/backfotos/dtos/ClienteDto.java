@@ -1,14 +1,8 @@
 package com.api.backfotos.dtos;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
-import java.util.UUID;
 
-public class UsuarioDto {
+public class ClienteDto {
     @NotBlank
     private String nome;
 
@@ -25,10 +19,13 @@ public class UsuarioDto {
     private String dataNascimento;
 
     @NotBlank
-    private String DDD;
+    private String cidade;
 
     @NotBlank
-    private String numTel;
+    private String estado;
+
+   @NotBlank
+   private String numTel;
 
     public String getNome() {
         return nome;
@@ -70,12 +67,20 @@ public class UsuarioDto {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getDDD() {
-        return DDD;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setDDD(String DDD) {
-        this.DDD = DDD;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getNumTel() {

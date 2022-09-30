@@ -1,37 +1,49 @@
 package com.api.backfotos.services;
 
-import com.api.backfotos.models.UsuarioModel;
-import com.api.backfotos.repositories.UsuarioRepository;
+import com.api.backfotos.models.ClienteModel;
+import com.api.backfotos.models.PessoaModel;
+import com.api.backfotos.repositories.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
-public class UsuarioService {
+public class ClienteService {
     /*
      * Criar uma Interface e depois importar aqui
      * */
 
-    final UsuarioRepository usuarioRepository;
+    final ClienteRepository clienteRepository;
 
-    public UsuarioService(UsuarioRepository usuarioRepository){
-        this.usuarioRepository = usuarioRepository;
+    public ClienteService(ClienteRepository clienteRepository){
+        this.clienteRepository = clienteRepository;
     }
     @Transactional
-    public UsuarioModel save(UsuarioModel usuarioModel) {
-        return usuarioRepository.save(usuarioModel);
+    public ClienteModel save(ClienteModel clienteModel) {
+        return clienteRepository.save(clienteModel);
     }
 
     public boolean existsByEmail(String email) {
-        return usuarioRepository.existsByEmail(email);
+        return clienteRepository.existsByEmail(email);
     }
 
     public boolean existsByCpf(String cpf) {
-        return usuarioRepository.existsByCpf(cpf);
+        return clienteRepository.existsByCpf(cpf);
     }
 
-    public List<UsuarioModel> findAll() {
-        return usuarioRepository.findAll();
+    public List<ClienteModel> findAll() {
+        return clienteRepository.findAll();
+    }
+
+    public Optional<ClienteModel> findById(UUID id) {
+        return clienteRepository.findById(id);
+    }
+
+    @Transactional
+    public void delete(ClienteModel clienteModel) {
+        clienteRepository.delete(clienteModel);
     }
 }

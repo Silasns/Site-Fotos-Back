@@ -2,17 +2,16 @@ package com.api.backfotos.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.UUID;
 @MappedSuperclass
 @Table(name="TB_USUARIOS")
-public class UsuarioModel implements Serializable {
+public class PessoaModel implements Serializable {
 
     private static final long serialVersionUID =1L;
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private UUID idUsuario;
+    private UUID id;
 
     @Column(nullable = false)
     private String nome;
@@ -30,17 +29,20 @@ public class UsuarioModel implements Serializable {
     private String dataNascimento;
 
     @Column(nullable = false)
-    private String DDD;
+    private String cidade;
+
+    @Column(nullable = false)
+    private String estado;
 
     @Column(nullable = false)
     private String numTel;
 
-    public UUID getIdUsuario() {
-        return idUsuario;
+    public UUID getId() {
+        return id;
     }
 
-    public void setIdUsuario(UUID idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -79,17 +81,24 @@ public class UsuarioModel implements Serializable {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String
-                                          dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getDDD() {
-        return DDD;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setDDD(String DDD) {
-        this.DDD = DDD;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getNumTel() {

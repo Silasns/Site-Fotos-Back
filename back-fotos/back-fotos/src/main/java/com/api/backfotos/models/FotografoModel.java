@@ -1,13 +1,11 @@
 package com.api.backfotos.models;
 
-import com.api.backfotos.services.MoedaService;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "TB_FOTOGRAFOS")
-public class FotografoModel extends UsuarioModel {
+public class FotografoModel extends PessoaModel {
 
     @OneToOne
     @JoinColumn(name = "numConta", nullable = false)
@@ -16,5 +14,19 @@ public class FotografoModel extends UsuarioModel {
     @Column
     private BigDecimal saldo;//ou String?
 
+    public ContaModel getConta() {
+        return conta;
+    }
 
+    public void setConta(ContaModel conta) {
+        this.conta = conta;
+    }
+
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
+    }
 }

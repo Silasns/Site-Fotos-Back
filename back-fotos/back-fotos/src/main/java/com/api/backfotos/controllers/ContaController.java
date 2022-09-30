@@ -1,2 +1,4 @@
-package com.api.backfotos.controllers;public class ContaController {
+package com.api.backfotos.controllers;
+
+public class ContaController {
 }

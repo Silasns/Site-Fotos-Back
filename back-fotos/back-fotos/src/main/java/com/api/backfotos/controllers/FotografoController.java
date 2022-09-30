@@ -1,2 +1,4 @@
-package com.api.backfotos.controllers;public class FotografoController {
+package com.api.backfotos.controllers;
+
+public class FotografoController {
 }
