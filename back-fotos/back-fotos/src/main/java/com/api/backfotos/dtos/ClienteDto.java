@@ -1,48 +1,34 @@
-package com.api.backfotos.models;
+package com.api.backfotos.dtos;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.util.UUID;
 
-@Entity
-@Table(name="TB_USUARIOS")
-public class UsuarioModel implements Serializable {
-
-    private static final long serialVersionUID =1L;
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private UUID idUsuario;
-
-    @Column(nullable = false)
+public class UsuarioDto {
+    @NotBlank
     private String nome;
 
-    @Column(nullable = false)
+    @NotBlank
     private String email;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @NotBlank
     private String cpf;
 
-    @Column(nullable = false)
+    @NotBlank
     private String genero;//Fazer enum
 
-    @Column(nullable = false)
-    private Date dataNascimento;
+    @NotBlank
+    private String dataNascimento;
 
-    @Column(nullable = false)
+    @NotBlank
     private String DDD;
 
-    @Column(nullable = false)
+    @NotBlank
     private String numTel;
-
-    public UUID getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(UUID idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public String getNome() {
         return nome;
@@ -76,11 +62,11 @@ public class UsuarioModel implements Serializable {
         this.genero = genero;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
