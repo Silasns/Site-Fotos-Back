@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class ContaModel {
     @Id
     private String numConta;
-    @Column(nullable = false)
+    @Column()
     private String numAgencia;
 
-    @Column(nullable = false)
+    @Column()
     private String tipoConta;//criar enum
 
     public String getNumConta() {

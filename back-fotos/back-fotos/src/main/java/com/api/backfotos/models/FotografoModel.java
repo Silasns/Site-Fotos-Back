@@ -12,7 +12,7 @@ public class FotografoModel extends PessoaModel {
     private ContaModel conta;
 
     @Column
-    private BigDecimal saldo;//ou String?
+    private String saldo;//ou String?
 
     public ContaModel getConta() {
         return conta;
@@ -22,11 +22,11 @@ public class FotografoModel extends PessoaModel {
         this.conta = conta;
     }
 
-    public BigDecimal getSaldo() {
+    public String getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(BigDecimal saldo) {
+    public void setSaldo(String saldo) {
         this.saldo = saldo;
     }
 }
